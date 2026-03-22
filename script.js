@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // Navigation functionality
 function initializeNavigation() {
   const navButtons = document.querySelectorAll('.nav-btn');
+  const activeButton = document.querySelector('.nav-btn.active');
+  
+  // Initialize underline position
+  if (activeButton) {
+    updateNavUnderline(activeButton);
+  }
   
   navButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -16,6 +22,14 @@ function initializeNavigation() {
       updateActiveNavButton(this);
       updateNavUnderline(this);
     });
+  });
+  
+  // Recalculate on window resize
+  window.addEventListener('resize', function() {
+    const activeButton = document.querySelector('.nav-btn.active');
+    if (activeButton) {
+      updateNavUnderline(activeButton);
+    }
   });
 }
 
@@ -44,11 +58,16 @@ function updateNavUnderline(button) {
   const underline = document.querySelector('.nav-underline');
   const navContainer = document.querySelector('.nav-container');
   
+  // Get button position relative to nav-container
   const buttonRect = button.getBoundingClientRect();
   const containerRect = navContainer.getBoundingClientRect();
   
-  underline.style.width = buttonRect.width + 'px';
-  underline.style.left = (buttonRect.left - containerRect.left) + 'px';
+  // Calculate position and width more accurately
+  const leftOffset = buttonRect.left - containerRect.left;
+  const width = buttonRect.width;
+  
+  underline.style.width = width + 'px';
+  underline.style.left = leftOffset + 'px';
 }
 
 // Job card toggle functionality
