@@ -4,345 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prasad Babu Konduru - Power Platform Developer</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-
-    /* Header */
-    .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 40px 30px;
-      text-align: center;
-    }
-
-    .header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    .header p {
-      font-size: 1.2em;
-      opacity: 0.9;
-    }
-
-    .contact-info {
-      margin-top: 20px;
-      font-size: 0.95em;
-      opacity: 0.95;
-    }
-
-    .contact-info span {
-      margin: 0 15px;
-    }
-
-    /* Navigation */
-    nav {
-      background: #f8f9fa;
-      padding: 15px 30px;
-      border-bottom: 2px solid #667eea;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1em;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      color: #667eea;
-      font-weight: 600;
-    }
-
-    nav button:hover {
-      background: #667eea;
-      color: white;
-    }
-
-    /* Main Content */
-    .content {
-      padding: 30px;
-    }
-
-    .section {
-      margin-bottom: 30px;
-      display: none;
-    }
-
-    .section.active {
-      display: block;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .section-title {
-      font-size: 1.8em;
-      color: #667eea;
-      margin-bottom: 20px;
-      border-bottom: 3px solid #667eea;
-      padding-bottom: 10px;
-    }
-
-    /* Profile Section */
-    .profile-summary {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 8px;
-      line-height: 1.8;
-    }
-
-    /* Experience */
-    .job {
-      margin-bottom: 25px;
-      padding: 15px;
-      background: #f8f9fa;
-      border-left: 4px solid #667eea;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .job:hover {
-      transform: translateX(5px);
-      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-    }
-
-    .job-title {
-      font-size: 1.2em;
-      font-weight: 600;
-      color: #667eea;
-      margin-bottom: 5px;
-    }
-
-    .job-company {
-      font-size: 1em;
-      color: #666;
-      font-weight: 500;
-    }
-
-    .job-period {
-      font-size: 0.9em;
-      color: #999;
-      margin-top: 5px;
-    }
-
-    .job-details {
-      display: none;
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px solid #ddd;
-    }
-
-    .job-details.show {
-      display: block;
-    }
-
-    .job-details ul {
-      margin-left: 20px;
-      list-style-type: square;
-    }
-
-    .job-details li {
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .skill-category {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 8px;
-      border-top: 3px solid #667eea;
-    }
-
-    .skill-category-title {
-      font-weight: 600;
-      color: #667eea;
-      margin-bottom: 12px;
-      font-size: 1.1em;
-    }
-
-    .skill-item {
-      background: white;
-      padding: 8px 12px;
-      margin-bottom: 8px;
-      border-radius: 5px;
-      border-left: 3px solid #764ba2;
-    }
-
-    /* Credentials */
-    .credentials-list {
-      display: grid;
-      gap: 15px;
-    }
-
-    .credential-item {
-      background: #f8f9fa;
-      padding: 15px;
-      border-radius: 8px;
-      border-left: 4px solid #667eea;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .credential-icon {
-      font-size: 1.5em;
-    }
-
-    .credential-text {
-      flex: 1;
-    }
-
-    /* Achievements */
-    .achievements-list {
-      display: grid;
-      gap: 15px;
-    }
-
-    .achievement-item {
-      background: #f8f9fa;
-      padding: 15px;
-      border-radius: 8px;
-      border-left: 4px solid #764ba2;
-    }
-
-    .achievement-title {
-      font-weight: 600;
-      color: #667eea;
-      margin-bottom: 5px;
-    }
-
-    /* Buttons */
-    .action-buttons {
-      text-align: center;
-      margin-top: 30px;
-      padding-top: 30px;
-      border-top: 2px solid #f0f0f0;
-    }
-
-    .btn {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 12px 30px;
-      margin: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1em;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-    }
-
-    /* Footer */
-    .footer {
-      background: #f8f9fa;
-      padding: 20px 30px;
-      text-align: center;
-      color: #666;
-      border-top: 1px solid #ddd;
-      margin-top: 20px;
-    }
-
-    .section-subtitle {
-      font-size: 1.3em;
-      color: #764ba2;
-      margin: 20px 0 15px 0;
-      font-weight: 600;
-    }
-
-    @media (max-width: 600px) {
-      .header h1 {
-        font-size: 1.8em;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      nav button {
-        width: 100%;
-        text-align: left;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <!-- Header -->
     <div class="header">
-      <h1>👋 Prasad Babu Konduru</h1>
-      <p>Power Platform Developer</p>
-      <div class="contact-info">
-        <span>📧 prasadbabu.work@gmail.com</span>
-        <span>📱 +91 8500042622</span>
+      <div class="header-content">
+        <h1>Prasad Babu Konduru</h1>
+        <p class="title-subtitle">Power Platform Developer</p>
+        <div class="contact-info">
+          <a href="mailto:prasadbabu.work@gmail.com" class="contact-link">
+            <span>📧</span> prasadbabu.work@gmail.com
+          </a>
+          <a href="tel:+918500042622" class="contact-link">
+            <span>📱</span> +91 8500042622
+          </a>
+        </div>
       </div>
+      <div class="header-decoration"></div>
     </div>
 
     <!-- Navigation -->
-    <nav>
-      <button onclick="showSection('profile')">Profile</button>
-      <button onclick="showSection('experience')">Experience</button>
-      <button onclick="showSection('skills')">Skills</button>
-      <button onclick="showSection('education')">Education</button>
-      <button onclick="showSection('credentials')">Credentials</button>
-      <button onclick="showSection('achievements')">Achievements</button>
+    <nav class="navbar">
+      <div class="nav-container">
+        <button class="nav-btn active" data-section="profile">
+          <span class="nav-icon">📋</span> Profile
+        </button>
+        <button class="nav-btn" data-section="experience">
+          <span class="nav-icon">💼</span> Experience
+        </button>
+        <button class="nav-btn" data-section="skills">
+          <span class="nav-icon">🛠️</span> Skills
+        </button>
+        <button class="nav-btn" data-section="education">
+          <span class="nav-icon">🎓</span> Education
+        </button>
+        <button class="nav-btn" data-section="credentials">
+          <span class="nav-icon">📜</span> Credentials
+        </button>
+        <button class="nav-btn" data-section="achievements">
+          <span class="nav-icon">🎖️</span> Achievements
+        </button>
+      </div>
+      <div class="nav-underline"></div>
     </nav>
 
     <!-- Content -->
     <div class="content">
       <!-- Profile Section -->
-      <div id="profile" class="section active">
+      <section id="profile" class="section active">
         <h2 class="section-title">📋 Profile Summary</h2>
         <div class="profile-summary">
           <p>
@@ -353,19 +64,40 @@
             domains with a focus on usability, performance, and security. Passionate about building scalable low-code applications, and Improve 
             my leadership skills.
           </p>
+          <div class="experience-badge">
+            <div class="badge-item">
+              <div class="badge-number">7+</div>
+              <div class="badge-label">Years Experience</div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-number">5+</div>
+              <div class="badge-label">Power Platform</div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-number">3</div>
+              <div class="badge-label">Certifications</div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       <!-- Experience Section -->
-      <div id="experience" class="section">
+      <section id="experience" class="section">
         <h2 class="section-title">💼 Experience</h2>
 
-        <div class="job" onclick="toggleDetails(this)">
-          <div class="job-title">🚀 Power Platform Developer</div>
-          <div class="job-company">TCS | Hyderabad, Telangana</div>
-          <div class="job-period">2020 – Present</div>
+        <div class="job-card" data-job="1">
+          <div class="job-header">
+            <div class="job-title-group">
+              <h3 class="job-title">🚀 Power Platform Developer</h3>
+              <p class="job-company">TCS | Hyderabad, Telangana</p>
+            </div>
+            <div class="job-meta">
+              <span class="job-period">2020 – Present</span>
+              <span class="job-duration">(4+ years)</span>
+            </div>
+          </div>
           <div class="job-details">
-            <ul>
+            <ul class="job-list">
               <li>Power Platform Developer with expertise in building end-to-end business solutions using Power Apps, Power BI, SQL, and Azure Data Services.</li>
               <li>Designed and deployed scalable Canvas Apps with modern controls, role-based access, AI Hub integration, and seamless data connectivity with SQL and Dataverse.</li>
               <li>Strong experience in API Integration — created and consumed REST APIs in Canvas Apps and Power Automate using Custom Connectors, handled OAuth 2.0 authentication, secured API calls with Azure AD.</li>
@@ -379,193 +111,259 @@
           </div>
         </div>
 
-        <div class="job" onclick="toggleDetails(this)">
-          <div class="job-title">.NET & SQL Developer</div>
-          <div class="job-company">TCS | Pune, Maharashtra</div>
-          <div class="job-period">2018 – 2020</div>
+        <div class="job-card" data-job="2">
+          <div class="job-header">
+            <div class="job-title-group">
+              <h3 class="job-title">.NET & SQL Developer</h3>
+              <p class="job-company">TCS | Pune, Maharashtra</p>
+            </div>
+            <div class="job-meta">
+              <span class="job-period">2018 – 2020</span>
+              <span class="job-duration">(2 years)</span>
+            </div>
+          </div>
           <div class="job-details">
-            <ul>
+            <ul class="job-list">
               <li>Developed new features for .NET and SQL-based web applications, with a strong focus on SQL (stored procedures, triggers, views).</li>
               <li>Contributed to .NET development with minor to medium-complexity features and front-end changes (HTML, CSS, JavaScript).</li>
               <li>Proficient in problem-solving, debugging, and code reuse to enhance application performance in the JLR manufacturing domain web application.</li>
             </ul>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Skills Section -->
-      <div id="skills" class="section">
+      <section id="skills" class="section">
         <h2 class="section-title">🛠️ Programming Skills</h2>
-        <div class="skills-grid">
+        <div class="skills-container">
           <div class="skill-category">
-            <div class="skill-category-title">Core Skills</div>
-            <div class="skill-item">SQL</div>
-            <div class="skill-item">Power Fx</div>
-            <div class="skill-item">DAX</div>
+            <h3 class="skill-category-title">Core Skills</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <span class="skill-name">SQL</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Power Fx</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">DAX</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="skill-category">
-            <div class="skill-category-title">Tools & Platforms</div>
-            <div class="skill-item">Power BI Desktop</div>
-            <div class="skill-item">SharePoint</div>
-            <div class="skill-item">Microsoft SQL Server</div>
-            <div class="skill-item">Power Apps</div>
-            <div class="skill-item">Azure Data Factory</div>
-            <div class="skill-item">Azure Data Explorer</div>
-            <div class="skill-item">Azure Logic Apps</div>
-            <div class="skill-item">Azure DevOps</div>
-            <div class="skill-item">Power Automate</div>
-            <div class="skill-item">Microsoft Fabric</div>
-            <div class="skill-item">Visual Studio</div>
+            <h3 class="skill-category-title">Tools & Platforms</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">Power BI Desktop</span>
+              <span class="skill-tag">SharePoint</span>
+              <span class="skill-tag">Microsoft SQL Server</span>
+              <span class="skill-tag">Power Apps</span>
+              <span class="skill-tag">Azure Data Factory</span>
+              <span class="skill-tag">Azure Data Explorer</span>
+              <span class="skill-tag">Azure Logic Apps</span>
+              <span class="skill-tag">Azure DevOps</span>
+              <span class="skill-tag">Power Automate</span>
+              <span class="skill-tag">Microsoft Fabric</span>
+              <span class="skill-tag">Visual Studio</span>
+              <span class="skill-tag">Azure AD</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Education Section -->
-      <div id="education" class="section">
+      <section id="education" class="section">
         <h2 class="section-title">🎓 Education</h2>
-        <div class="achievement-item">
-          <div class="achievement-title">B.Tech in Electronics and Communication Engineering (ECE)</div>
-          <p><strong>GVP College of Engineering</strong> | Visakhapatnam, A.P</p>
-          <p style="margin-top: 5px; color: #666;">2014 - 2018</p>
+        <div class="education-card">
+          <div class="education-content">
+            <h3 class="education-degree">B.Tech in Electronics and Communication Engineering (ECE)</h3>
+            <p class="education-institution">GVP College of Engineering</p>
+            <p class="education-location">Visakhapatnam, A.P</p>
+            <span class="education-period">2014 - 2018</span>
+          </div>
+          <div class="education-icon">🎓</div>
         </div>
-      </div>
+      </section>
 
       <!-- Credentials Section -->
-      <div id="credentials" class="section">
+      <section id="credentials" class="section">
         <h2 class="section-title">📜 Certifications</h2>
         
-        <div class="section-subtitle">✅ Earned Credentials</div>
-        <div class="credentials-list">
-          <div class="credential-item">
-            <div class="credential-icon">🏆</div>
-            <div class="credential-text">
-              <strong>Microsoft Applied Skills:</strong> Create and manage automated processes by using Power Automate (PL-7002)
+        <div class="credentials-section">
+          <h3 class="credentials-subtitle">✅ Earned Credentials</h3>
+          <div class="credentials-grid">
+            <div class="credential-card earned">
+              <div class="credential-header">
+                <span class="credential-badge">🏆</span>
+                <span class="credential-status">Earned</span>
+              </div>
+              <h4>Create and manage automated processes by using Power Automate</h4>
+              <p class="credential-code">PL-7002</p>
+              <p class="credential-issuer">Microsoft Applied Skills</p>
             </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-icon">🏆</div>
-            <div class="credential-text">
-              <strong>Microsoft Applied Skills:</strong> Create and manage canvas apps with Power Apps (PL-7001)
+
+            <div class="credential-card earned">
+              <div class="credential-header">
+                <span class="credential-badge">🏆</span>
+                <span class="credential-status">Earned</span>
+              </div>
+              <h4>Create and manage canvas apps with Power Apps</h4>
+              <p class="credential-code">PL-7001</p>
+              <p class="credential-issuer">Microsoft Applied Skills</p>
             </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-icon">🏆</div>
-            <div class="credential-text">
-              <strong>Microsoft Certified:</strong> Power Platform Fundamentals (PL-900)
+
+            <div class="credential-card earned">
+              <div class="credential-header">
+                <span class="credential-badge">🏆</span>
+                <span class="credential-status">Earned</span>
+              </div>
+              <h4>Power Platform Fundamentals</h4>
+              <p class="credential-code">PL-900</p>
+              <p class="credential-issuer">Microsoft Certified</p>
             </div>
           </div>
         </div>
 
-        <div class="section-subtitle" style="margin-top: 30px;">🎯 Planned Credentials</div>
-        <div class="credentials-list">
-          <div class="credential-item">
-            <div class="credential-icon">📌</div>
-            <div class="credential-text">
-              Microsoft Applied Skills: Create and manage model-driven apps with Power Apps and Dataverse (PL-7003)
+        <div class="credentials-section">
+          <h3 class="credentials-subtitle">🎯 Planned Credentials</h3>
+          <div class="credentials-grid">
+            <div class="credential-card planned">
+              <div class="credential-header">
+                <span class="credential-badge">📌</span>
+                <span class="credential-status">In Progress</span>
+              </div>
+              <h4>Create and manage model-driven apps with Power Apps and Dataverse</h4>
+              <p class="credential-code">PL-7003</p>
+              <p class="credential-issuer">Microsoft Applied Skills</p>
             </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-icon">📌</div>
-            <div class="credential-text">
-              Microsoft Applied Skills: Create agents in Microsoft Copilot Studio (PL-7008)
+
+            <div class="credential-card planned">
+              <div class="credential-header">
+                <span class="credential-badge">📌</span>
+                <span class="credential-status">In Progress</span>
+              </div>
+              <h4>Create agents in Microsoft Copilot Studio</h4>
+              <p class="credential-code">PL-7008</p>
+              <p class="credential-issuer">Microsoft Applied Skills</p>
             </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-icon">📌</div>
-            <div class="credential-text">
-              Microsoft Certified: Power BI Data Analyst Associate (PL-300)
+
+            <div class="credential-card planned">
+              <div class="credential-header">
+                <span class="credential-badge">📌</span>
+                <span class="credential-status">In Progress</span>
+              </div>
+              <h4>Power BI Data Analyst Associate</h4>
+              <p class="credential-code">PL-300</p>
+              <p class="credential-issuer">Microsoft Certified</p>
             </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-icon">📌</div>
-            <div class="credential-text">
-              Microsoft Certified: Power Platform Functional Consultant Associate (PL-200)
+
+            <div class="credential-card planned">
+              <div class="credential-header">
+                <span class="credential-badge">📌</span>
+                <span class="credential-status">In Progress</span>
+              </div>
+              <h4>Power Platform Functional Consultant Associate</h4>
+              <p class="credential-code">PL-200</p>
+              <p class="credential-issuer">Microsoft Certified</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Achievements Section -->
-      <div id="achievements" class="section">
+      <section id="achievements" class="section">
         <h2 class="section-title">🎖️ Achievements & Activities</h2>
         
-        <div class="section-subtitle">Professional Achievements</div>
-        <div class="achievements-list">
-          <div class="achievement-item">
-            <div class="credential-icon">⭐</div>
-            <p>Successfully deployed various Power BI reports in the Power BI service, delivering interactive dashboards and actionable insights, with some reports integrating Power Automate flows.</p>
-          </div>
-          <div class="achievement-item">
-            <div class="credential-icon">⭐</div>
-            <p>Implemented a user story tracking feature in a compliance dashboard using SharePoint Excel and Azure Data Explorer, leveraging Azure Logic Apps, ADF, and SQL procedures for business logic.</p>
-          </div>
-          <div class="achievement-item">
-            <div class="credential-icon">⭐</div>
-            <p>Designed and delivered medium to complex Canvas Apps using modern controls and multiple data sources (SQL, Dataverse), incorporating AI capabilities in specific areas.</p>
-          </div>
-          <div class="achievement-item">
-            <div class="credential-icon">⭐</div>
-            <p>Managed application access through role-based security in Power Apps, ensuring proper admin and non-admin functionality control.</p>
+        <div class="achievements-section">
+          <h3 class="achievements-subtitle">Professional Achievements</h3>
+          <div class="achievements-grid">
+            <div class="achievement-card">
+              <div class="achievement-icon">⭐</div>
+              <p>Successfully deployed various Power BI reports in the Power BI service, delivering interactive dashboards and actionable insights, with some reports integrating Power Automate flows.</p>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-icon">⭐</div>
+              <p>Implemented a user story tracking feature in a compliance dashboard using SharePoint Excel and Azure Data Explorer, leveraging Azure Logic Apps, ADF, and SQL procedures for business logic.</p>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-icon">⭐</div>
+              <p>Designed and delivered medium to complex Canvas Apps using modern controls and multiple data sources (SQL, Dataverse), incorporating AI capabilities in specific areas.</p>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-icon">⭐</div>
+              <p>Managed application access through role-based security in Power Apps, ensuring proper admin and non-admin functionality control.</p>
+            </div>
           </div>
         </div>
 
-        <div class="section-subtitle">Other Activities</div>
-        <div class="achievements-list">
-          <div class="achievement-item">
-            <div class="achievement-title">🎤 Toastmaster Club Member</div>
-            <p>Recently joined Toastmaster Club to improve communication and leadership skills. Participated in Toastmaster club TCS Synergy Park Evaluation Speech Contest (ESC).</p>
-          </div>
-          <div class="achievement-item">
-            <div class="achievement-title">🏓 Professional Table Tennis Player</div>
-            <ul style="margin-left: 20px; margin-top: 10px;">
-              <li>Won the 2017 JNTUK Intercollegiate TT Team Event</li>
-              <li>Represented Krishna District in the 2021 State Championship Team Event</li>
-              <li>Captained the TCS team in HYSEA 2024 and secured the winner's title</li>
-              <li>Won multiple corporate tournaments conducted by HCTT and other local clubs</li>
-            </ul>
-          </div>
-          <div class="achievement-item">
-            <div class="achievement-title">🤖 Personal Project - Table Tennis Robot</div>
-            <p>Built a table tennis robot as a personal project, controlled via an Android mobile app developed using MIT App Inventor, with Arduino for programming.</p>
+        <div class="achievements-section">
+          <h3 class="achievements-subtitle">Other Activities</h3>
+          <div class="activities-container">
+            <div class="activity-card">
+              <div class="activity-icon">🎤</div>
+              <div class="activity-content">
+                <h4>Toastmaster Club Member</h4>
+                <p>Recently joined Toastmaster Club to improve communication and leadership skills. Participated in Toastmaster club TCS Synergy Park Evaluation Speech Contest (ESC).</p>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-icon">🏓</div>
+              <div class="activity-content">
+                <h4>Professional Table Tennis Player</h4>
+                <ul class="activity-list">
+                  <li>Won the 2017 JNTUK Intercollegiate TT Team Event</li>
+                  <li>Represented Krishna District in the 2021 State Championship Team Event</li>
+                  <li>Captained the TCS team in HYSEA 2024 and secured the winner's title</li>
+                  <li>Won multiple corporate tournaments conducted by HCTT and other local clubs</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-icon">🤖</div>
+              <div class="activity-content">
+                <h4>Personal Project - Table Tennis Robot</h4>
+                <p>Built a table tennis robot as a personal project, controlled via an Android mobile app developed using MIT App Inventor, with Arduino for programming.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Action Buttons -->
       <div class="action-buttons">
-        <button class="btn" onclick="window.print()">📥 Download as PDF</button>
-        <button class="btn" onclick="alert('Contact: prasadbabu.work@gmail.com or +91 8500042622')">📧 Contact Me</button>
+        <button class="btn btn-primary" id="downloadBtn">
+          <span>📥</span> Download Resume as PDF
+        </button>
+        <button class="btn btn-secondary" id="contactBtn">
+          <span>📧</span> Get in Touch
+        </button>
       </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
       <p>&copy; 2026 Prasad Babu Konduru. All rights reserved. | Last Updated: March 2026</p>
+      <div class="social-links">
+        <a href="mailto:prasadbabu.work@gmail.com" title="Email">📧</a>
+        <a href="tel:+918500042622" title="Phone">📱</a>
+      </div>
     </div>
   </div>
 
-  <script>
-    function showSection(sectionId) {
-      // Hide all sections
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
 
-      // Show selected section
-      const selectedSection = document.getElementById(sectionId);
-      if (selectedSection) {
-        selectedSection.classList.add('active');
-      }
-    }
-
-    function toggleDetails(element) {
-      const details = element.querySelector('.job-details');
-      if (details) {
-        details.classList.toggle('show');
-        element.style.background = details.classList.contains('show') ? '#f0f0f0' : '#f8f9fa';
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
