@@ -58,6 +58,9 @@
         <button class="nav-btn" data-section="achievements">
           Achievements
         </button>
+        <button class="nav-btn" data-section="copilot">
+          Copilot
+        </button>
         <div class="nav-underline"></div>
       </div>
     </nav>
@@ -293,6 +296,20 @@
         </div>
       </section>
 
+      <!-- Copilot Studio Agent Section -->
+      <section id="copilot" class="section">
+        <h2 class="section-title">Copilot Studio Agent</h2>
+        <div class="agent-frame-wrapper">
+          <iframe
+            src="https://copilotstudio.preview.microsoft.com/environments/Default-4679adb0-de3d-4303-b118-f2c52eb3ea2a/bots/crb5b_documentQAAssistant/webchat?__version__=2"
+            class="agent-frame"
+            allow="microphone; clipboard-write"
+            loading="lazy"
+            title="Copilot Studio Agent"
+          ></iframe>
+        </div>
+      </section>
+
       <!-- Action Buttons -->
       <div class="action-buttons">
         <a href="Prasad_PowerPlatform_Resume.docx" download="prasad_powerplatform_resume.docx" class="btn btn-primary" id="downloadLink">
@@ -304,6 +321,23 @@
 
   <!-- Toast Notification -->
   <div id="toast" class="toast"></div>
+
+  <div class="copilot-widget">
+    <button class="copilot-toggle" id="copilotToggle" aria-label="Open Copilot chat">Chat</button>
+    <div class="copilot-panel" id="copilotPanel" aria-hidden="true">
+      <div class="copilot-panel-header">
+        <h3>Copilot Studio Chat</h3>
+        <button class="copilot-close" id="copilotClose" aria-label="Close chat">×</button>
+      </div>
+      <iframe
+        class="copilot-chat-iframe"
+        src="https://copilotstudio.preview.microsoft.com/environments/Default-4679adb0-de3d-4303-b118-f2c52eb3ea2a/bots/crb5b_documentQAAssistant/webchat?__version__=2"
+        allow="microphone; clipboard-write"
+        loading="lazy"
+        title="Copilot Studio Agent"
+      ></iframe>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

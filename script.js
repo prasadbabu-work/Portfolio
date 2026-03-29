@@ -150,6 +150,36 @@ function setupEventListeners() {
 
   // Add animation to skill progress bars on scroll
   observeSkillBars();
+  initializeCopilotWidget();
+}
+
+function initializeCopilotWidget() {
+  const offButton = document.getElementById('copilotToggle');
+  const panel = document.getElementById('copilotPanel');
+  const closeButton = document.getElementById('copilotClose');
+
+  if (!offButton || !panel || !closeButton) {
+    return;
+  }
+
+  function openPanel() {
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden', 'false');
+  }
+
+  function closePanel() {
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+  }
+
+  offButton.addEventListener('click', openPanel);
+  closeButton.addEventListener('click', closePanel);
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && panel.classList.contains('open')) {
+      closePanel();
+    }
+  });
 }
 
 // Animate skill bars on scroll

@@ -173,6 +173,103 @@ body {
   font-size: 0.95rem;
 }
 
+.agent-frame-wrapper {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 650px;
+  box-shadow: var(--shadow-sm);
+}
+
+.agent-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.copilot-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.copilot-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent-color);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(22, 160, 133, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.copilot-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(22, 160, 133, 0.3);
+}
+
+.copilot-panel {
+  width: 420px;
+  max-width: calc(100vw - 40px);
+  height: 88vh;
+  background: white;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  transform: translateY(140%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.copilot-panel.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.copilot-panel-header {
+  background: var(--primary-color);
+  color: white;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copilot-panel-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+
+.copilot-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.copilot-chat-iframe {
+  width: 100%;
+  height: calc(100% - 62px);
+  border: 0;
+}
+
 .experience-points {
   list-style: disc inside;
   color: #4a5568;
