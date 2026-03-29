@@ -351,6 +351,19 @@ body {
   height: 22px;
 }
 
+.social-link.resume-download {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--primary-color);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.social-link.resume-download:hover {
+  background: #f1f5f9;
+  color: var(--primary-color);
+  transform: translateY(-3px) scale(1.05);
+  border-color: #cbd5e1;
+}
+
 .social-link:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-3px) scale(1.1);
